@@ -9,4 +9,20 @@
 
 * {
   background: var(--background);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.textDiv {
+  padding: 20px;
+}
+
+.right {
+  float: right;
 }

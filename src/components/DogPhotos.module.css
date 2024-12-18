@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+}
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar but keep functionality */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+.photo {
+  min-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.scrollButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.leftButton {
+  left: 20px;
+}
+
+.rightButton {
+  right: 50px;
+}
+
+/* Add hover effect */
+.scrollButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
