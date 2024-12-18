@@ -1,12 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import DogPhotos from "./components/DogPhotos";
+import Header from "./components/Header";
+import PhotoHeader from "./components/PhotoHeader";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <p>Woof Woof</p>;
+  return (
+    <div>
+      <Header />
+      <PhotoHeader />
+      <DogPhotos />
+    </div>
+  );
 }
 
 export default App;
