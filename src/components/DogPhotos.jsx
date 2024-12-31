@@ -1,6 +1,6 @@
 import styles from "./DogPhotos.module.css";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function DogPhotos() {
   const dogPhotos = [
@@ -15,13 +15,19 @@ function DogPhotos() {
   ];
 
   const scrollContainerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
-    const scrollAmount = 300; // Adjust this value as needed
     if (container) {
-      container.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
+      const newIndex =
+        direction === "left"
+          ? Math.max(0, currentIndex - 1)
+          : Math.min(dogPhotos.length - 1, currentIndex + 1);
+
+      setCurrentIndex(newIndex);
+      container.scrollTo({
+        left: newIndex * 300,
         behavior: "smooth",
       });
     }

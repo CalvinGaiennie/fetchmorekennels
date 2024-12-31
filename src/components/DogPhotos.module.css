@@ -2,24 +2,23 @@
   width: 100%;
   position: relative;
   padding: 20px;
+  overflow: hidden;
 }
+
 .scrollContainer {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-
-  /* Hide scrollbar but keep functionality */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.scrollContainer::-webkit-scrollbar {
-  display: none;
-}
 .photo {
-  min-width: 300px;
+  min-width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  scroll-snap-align: center;
 }
 
 .scrollButton {
